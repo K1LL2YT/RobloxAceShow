@@ -2,461 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KLZ Aced Tournament</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-
-  <style>
-    body {
-      background: url('https://i.pinimg.com/736x/4d/55/31/4d5531ecd0f8bf9ae947ae7f81502bce.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #eee;
-      font-family: 'Segoe UI', sans-serif;
-      padding-bottom: 2rem;
-    }
-
-    .banner-image {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 24px #ffb40099;
-    }
-
-    h1 {
-      font-weight: 900;
-      color: #ffb400;
-      text-shadow: 0 0 6px #ffb400aa;
-      text-align: center;
-      font-size: 3rem;
-    }
-
-    p.lead {
-      text-align: center;
-      color: #ccc;
-    }
-
-    .nav-tabs .nav-link.active {
-      background-color: #1f1f1f;
-      border-color: #444 #444 #0d0d0d;
-      color: #ffb400;
-      font-weight: 700;
-    }
-
-    .nav-tabs .nav-link {
-      color: #bbb;
-      font-weight: 600;
-    }
-
-    table {
-      background: #121212cc;
-      border-radius: 10px;
-      box-shadow: 0 0 16px #ffb400aa;
-    }
-
-    thead tr {
-      background: #222;
-      color: #ffb400;
-    }
-
-    img.avatar {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      border: 3px solid #ffb400;
-      margin-right: 0.5rem;
-      transition: transform 0.2s ease;
-    }
-
-    img.avatar:hover {
-      transform: scale(1.1);
-      border-color: #fff;
-    }
-
-    .rank-badge {
-      font-size: 1.5rem;
-      vertical-align: middle;
-      margin-left: 8px;
-    }
-
-    .rank-1 { color: #ffd700; text-shadow: 0 0 5px #ffd700aa; }
-    .rank-2 { color: #c0c0c0; text-shadow: 0 0 4px #c0c0c0aa; }
-    .rank-3 { color: #cd7f32; text-shadow: 0 0 4px #cd7f32aa; }
-
-    /* Podium */
-#podium {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 30px;
-  margin: 40px 0;
-  padding: 20px;
-  background: #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 180, 0, 0.1);
-}
-
-.podium-spot {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 120px;
-  padding: 15px;
-  background: #2a2a2a;
-  border-radius: 12px;
-  color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.podium-spot:hover {
-  transform: translateY(-5px);
-}
-
-.podium-spot img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  margin-bottom: 10px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-}
-
-.podium-spot .podium-rank {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.podium-1 {
-  background: linear-gradient(145deg, #ffd700, #ffb400);
-  color: #000;
-}
-
-.podium-2 {
-  background: linear-gradient(145deg, #c0c0c0, #a8a8a8);
-  color: #000;
-}
-
-.podium-3 {
-  background: linear-gradient(145deg, #cd7f32, #a65c2e);
-  color: #fff;
-}
-
-
-    /* Tag badges */
-    .tag-badge {
-      padding: 2px 6px;
-      margin-left: 5px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      color: #000;
-      font-weight: 600;
-      display: inline-block;
-      background-color: #ffc107; /* Bootstrap warning color */
-    }
-
-    /* Filter container */
-    #filter-container select {
-      margin-right: 1rem;
-      min-width: 150px;
-      background: #222;
-      color: #ffb400;
-      border: 1px solid #ffb400;
-      padding: 4px 8px;
-      border-radius: 5px;
-      font-weight: 600;
-    }
-    .status-badge {
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.2em 0.6em;
-  border-radius: 12px;
-  display: inline-block;
-  color: #fff;
-}
-
-.status-active {
-  background-color: #28a745; /* green */
-}
-
-.status-less-active {
-  background-color: #ffc107; /* yellow */
-  color: #000;
-}
-
-.status-banned {
-  background-color: #dc3545; /* red */
-}
-
-.status-not-in-tournament {
-  background-color: #6c757d; /* gray */
-}
-
-  </style>
+  <title>The Roblox Aced Show</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
-<body class="container py-4">
+<body>
 
-  <!-- Background music -->
-  <audio autoplay loop>
-    <source src="YOUR_BGM_MP3_URL" type="audio/mpeg" />
-  </audio>
+<audio autoplay loop src="assets/audio/bgm.mp3"></audio>
+<audio id="click-sfx" src="assets/audio/click.mp3"></audio>
 
-  <!-- Click SFX -->
-  <audio id="sfx-click">
-    <source src="YOUR_SFX_MP3_URL" type="audio/mpeg" />
-  </audio>
+<header class="hero">
+  <img src="assets/images/logo.png" class="logo">
+  <h1>The Roblox Aced Show</h1>
+  <p>Competitive. Stylish. Legendary.</p>
+</header>
 
-  <!-- Tournament banner -->
-  <img src="https://static.vecteezy.com/system/resources/previews/027/127/470/non_2x/roblox-logo-roblox-icon-transparent-free-png.png" class="banner-image" alt="Tournament Banner" />
+<nav class="main-nav">
+  <a href="leaderboard.html">Leaderboard</a>
+  <a href="games.html">Games</a>
+  <a href="winners.html">Winners</a>
+  <a href="merch.html">Merch</a>
+</nav>
 
-  <h1><i class="bi bi-controller"></i> KLZ Aced Tournament</h1>
-  <p class="lead">Fun. Competitive. Chaotic. Open to all players. Hosted by RobloxKLZ.</p>
+<section class="info-section">
+  <h2>About The Tournament</h2>
+  <p>
+    The Roblox Aced Show is a seasonal competitive tournament featuring
+    the best Roblox players across multiple genres and difficulties.
+  </p>
+</section>
 
-  <ul class="nav nav-tabs" id="tabs" role="tablist">
-    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#updateboard">📢 Update Board</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#leaderboard">📊 Leaderboard</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#games">🕹️ Games</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#schedule">🗓️ Schedule</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#merch">🛒 Merch Store</button></li>
-  </ul>
+<script src="assets/js/sound.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Roblox Aced Show</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
 
-  <div class="tab-content mt-4">
-    <div class="tab-pane fade show active" id="updateboard">
-      <h3>📢 Current Tournament Updates</h3>
-      <div id="update-board-content" class="mb-3">
-        <p>Loading tournament info...</p>
-      </div>
-      <div class="row row-cols-1 row-cols-md-2 g-4" id="player-list"></div>
-    </div>
-    <div class="tab-pane fade" id="leaderboard">
-      <h3>📊 Elo Leaderboard</h3>
+<audio autoplay loop src="assets/audio/bgm.mp3"></audio>
+<audio id="click-sfx" src="assets/audio/click.mp3"></audio>
 
-      <div id="filter-container" class="mb-3">
-        <select id="tag-filter" title="Filter by Tag">
-          <option value="All" selected>All Tags</option>
-          <!-- tags will be filled dynamically -->
-        </select>
+<header class="hero">
+  <img src="assets/images/logo.png" class="logo">
+  <h1>The Roblox Aced Show</h1>
+  <p>Competitive. Stylish. Legendary.</p>
+</header>
 
-        <select id="status-filter" title="Filter by Status">
-          <option value="All" selected>All Players</option>
-          <option value="Active">Active Only</option>
-          <option value="Eliminated">Eliminated Only</option>
-        </select>
-      </div>
+<nav class="main-nav">
+  <a href="leaderboard.html">Leaderboard</a>
+  <a href="games.html">Games</a>
+  <a href="winners.html">Winners</a>
+  <a href="merch.html">Merch</a>
+</nav>
 
-      <!-- 🥇 Podium -->
-      <div id="podium" class="podium"></div>
+<section class="info-section">
+  <h2>About The Tournament</h2>
+  <p>
+    The Roblox Aced Show is a seasonal competitive tournament featuring
+    the best Roblox players across multiple genres and difficulties.
+  </p>
+</section>
 
-      <table class="table table-dark table-hover align-middle" id="leaderboard-table" style="max-width: 900px; margin:auto;">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Player</th>
-            <th>Game Wins</th>
-            <th>Tourney Wins</th>
-            <th>Top Finishes</th>
-            <th>Losses</th>
-            <th>Games Played</th>
-            <th>Elo</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
-    <div class="tab-pane fade" id="games">
-      <h3>🕹️ Games List</h3>
-      <p>Coming soon...</p>
-    </div>
-    <div class="tab-pane fade" id="schedule">
-      <h3>🗓️ Tournament Schedule</h3>
-      <p>Coming soon...</p>
-    </div>
-    <div class="tab-pane fade" id="merch">
-      <h3>🛒 Merchandise Store</h3>
-      <p>Coming soon...</p>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    // URL to your published Google Sheet CSV here:
-    const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2_wr_BqYz609qT5ajqqg7Dc9GIg0Y1fC9u26LnDWFuZbs_ItQfiRigpXkywopq5K4LuSRR25FaBAw/pub?output=csv';
-
-    // Utility function to parse CSV into objects array
-    function csvToObjects(csvText) {
-      const lines = csvText.trim().split('\n');
-      const headers = lines.shift().split(',');
-      return lines.map(line => {
-        const data = line.split(',');
-        let obj = {};
-        headers.forEach((h, i) => obj[h.trim()] = data[i] ? data[i].trim() : '');
-        return obj;
-      });
-    }
-
-    // Load player data from CSV
-    async function loadPlayerData() {
-      try {
-        const response = await fetch(GOOGLE_SHEET_CSV_URL);
-        if (!response.ok) throw new Error('Failed to load player data.');
-        const csvText = await response.text();
-        const players = csvToObjects(csvText);
-
-        // Parse numbers and arrays
-        players.forEach(p => {
-          p['Game Wins'] = Number(p['Game Wins']) || 0;
-          p['Tourney Wins'] = Number(p['Tourney Wins']) || 0;
-          p['Top Finishes'] = Number(p['Top Finishes']) || 0;
-          p['Losses'] = Number(p['Losses']) || 0;
-          p['Games Played'] = Number(p['Games Played']) || 0;
-          p.Elo = Number(p.Elo) || 0;
-          p.Tags = p.Tags ? p.Tags.split(';').map(t => t.trim()) : [];
-          p.Status = p.Status || 'Active';
-        });
-
-        return players;
-      } catch (err) {
-        console.error(err);
-        alert('Could not load player data.');
-        return [];
-      }
-    }
-
-    // Render leaderboard table and podium
-    function renderLeaderboard(players) {
-      // Sort players by Elo descending
-      const sortedPlayers = [...players].sort((a, b) => b.Elo - a.Elo);
-
-      // Podium: top 3
-      const podiumContainer = document.getElementById('podium');
-      podiumContainer.innerHTML = '';
-      for (let i = 0; i < 3; i++) {
-        const player = sortedPlayers[i];
-        if (!player) continue;
-
-        const podiumSpot = document.createElement('div');
-        podiumSpot.classList.add('podium-spot', `podium-${i + 1}`);
-        podiumSpot.innerHTML = `
-          <img src="${player.AvatarURL}" alt="${player.Name} Avatar" title="${player.Name}" />
-          <div class="podium-rank">${i === 0 ? '🥇 1st' : i === 1 ? '🥈 2nd' : '🥉 3rd'}</div>
-          <div>${player.Name}</div>
-          <div>Elo: ${player.Elo}</div>
-        `;
-
-        podiumContainer.appendChild(podiumSpot);
-      }
-
-      // Leaderboard table rows
-      const tbody = document.querySelector('#leaderboard-table tbody');
-      tbody.innerHTML = '';
-
-      sortedPlayers.forEach((p, idx) => {
-        // Status badge
-function getStatusBadge(status) {
-  switch (status.toLowerCase()) {
-    case 'active':
-      return `<span class="status-badge status-active">Active</span>`;
-    case 'less active':
-      return `<span class="status-badge status-less-active">Less Active</span>`;
-    case 'banned':
-      return `<span class="status-badge status-banned">Banned</span>`;
-    case 'not in current tournament':
-      return `<span class="status-badge status-not-in-tournament">Not in Tournament</span>`;
-    case 'eliminated':
-      return `<span class="status-badge status-banned">Eliminated</span>`;
-    default:
-      return `<span class="status-badge status-active">${status}</span>`;
-  }
-}
-
-        const tagSpans = p.Tags.map(tag => `<span class="tag-badge">${tag}</span>`).join(' ');
-
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${idx + 1} ${idx < 3 ? `<span class="rank-badge rank-${idx + 1}">&#x2B50;</span>` : ''}</td>
-          <td>
-            <a href="https://www.roblox.com/users/${p.UserID}/profile" target="_blank" style="color:#ffb400; text-decoration:none;">
-              <img src="${p.AvatarURL}" alt="${p.Name}" class="avatar" />
-              ${p.Name}
-            </a>
-            ${tagSpans}
-          </td>
-          <td>${p['Game Wins']}</td>
-          <td>${p['Tourney Wins']}</td>
-          <td>${p['Top Finishes']}</td>
-          <td>${p['Losses']}</td>
-          <td>${p['Games Played']}</td>
-          <td>${p.Elo}</td>
-          <td>${getStatusBadge(p.Status)}</td>
-        `;
-        tbody.appendChild(tr);
-      });
-    }
-
-    // Filter players by tag and status
-    function filterPlayers(players, tagFilter, statusFilter) {
-      return players.filter(p => {
-        // Filter by status
-        if (statusFilter === 'Active' && p.Status.toLowerCase() !== 'active') return false;
-        if (statusFilter === 'Eliminated' && p.Status.toLowerCase() !== 'eliminated') return false;
-
-        // Filter by tag
-        if (tagFilter !== 'All' && !p.Tags.includes(tagFilter)) return false;
-
-        return true;
-      });
-    }
-
-    // Populate tag filter options based on unique tags found
-    function populateTagFilter(players) {
-      const tagSet = new Set();
-      players.forEach(p => p.Tags.forEach(t => tagSet.add(t)));
-
-      const tagFilter = document.getElementById('tag-filter');
-      // Clear existing options except All
-      tagFilter.querySelectorAll('option:not([value="All"])').forEach(o => o.remove());
-
-      Array.from(tagSet).sort().forEach(tag => {
-        const opt = document.createElement('option');
-        opt.value = tag;
-        opt.textContent = tag;
-        tagFilter.appendChild(opt);
-      });
-    }
-
-    async function init() {
-      const players = await loadPlayerData();
-
-      // Populate filters
-      populateTagFilter(players);
-
-      // Initial render
-      let filteredPlayers = players;
-      renderLeaderboard(filteredPlayers);
-
-      // Set up filter event listeners
-      const tagFilter = document.getElementById('tag-filter');
-      const statusFilter = document.getElementById('status-filter');
-
-      function onFilterChange() {
-        const tagValue = tagFilter.value;
-        const statusValue = statusFilter.value;
-        const filtered = filterPlayers(players, tagValue, statusValue);
-        renderLeaderboard(filtered);
-      }
-
-      tagFilter.addEventListener('change', onFilterChange);
-      statusFilter.addEventListener('change', onFilterChange);
-    }
-
-    // Run init after page load
-    window.addEventListener('DOMContentLoaded', init);
-  </script>
+<script src="assets/js/sound.js"></script>
 </body>
 </html>
