@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel – TRAS</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<script type="module">
+  import { requireAdmin } from "./assets/js/auth.js";
+  requireAdmin();
+</script>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="leaderboard.html">Leaderboard</a>
+  <a href="winners.html">Winners</a>
+  <a href="games.html">Games</a>
+  <a href="merch.html">Merch</a>
+  <a href="admin.html">Admin</a>
+</nav>
+
+<div class="glass">
+  <h1>Admin Panel</h1>
+
+  <label>New Player</label>
+  <input id="new-name" placeholder="Player Name">
+
+  <label>Season</label>
+  <select id="new-season"></select>
+
+  <button id="add-player">Add Player</button>
+
+  <hr>
+
+  <label>New Season</label>
+  <input id="new-season-name" placeholder="Season X – YEAR">
+  <button id="add-season">Add Season</button>
+</div>
+
+<div id="admin" class="glass"></div>
+
+<script type="module" src="assets/js/admin.js"></script>
+<script src="assets/js/sounds.js"></script>
+</body>
+</html>

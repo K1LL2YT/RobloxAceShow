@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Winners | Aced Show</title>
-  <link rel="stylesheet" href="assets/css/main.css">
+  <meta charset="UTF-8">
+  <title>Winners – TRAS</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<h2>🏆 Season Winners</h2>
-<div id="winners"></div>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="leaderboard.html">Leaderboard</a>
+  <a href="winners.html">Winners</a>
+  <a href="games.html">Games</a>
+  <a href="merch.html">Merch</a>
+  <a href="admin.html">Admin</a>
+</nav>
 
-<script src="assets/js/data.js"></script>
-<script src="assets/js/winners.js"></script>
+<div class="glass controls">
+  <label>Select Season</label>
+  <select id="season-select"></select>
+</div>
+
+<div id="podium" class="podium"></div>
+
+<script type="module" src="assets/js/winners.js"></script>
+<script src="assets/js/sounds.js"></script>
 </body>
 </html>

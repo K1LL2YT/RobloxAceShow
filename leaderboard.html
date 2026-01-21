@@ -2,17 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Leaderboard – Roblox Aced Show</title>
+  <title>Leaderboard – TRAS</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<h1 style="text-align:center;">Current Season Leaderboard</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="leaderboard.html">Leaderboard</a>
+  <a href="winners.html">Winners</a>
+  <a href="games.html">Games</a>
+  <a href="merch.html">Merch</a>
+  <a href="admin.html">Admin</a>
+</nav>
 
-<div id="leaderboard" class="container"></div>
+<div class="glass controls">
+  <label>Select Season</label>
+  <select id="season-select"></select>
+</div>
 
-<script src="assets/js/data.js"></script>
-<script src="assets/js/leaderboard.js"></script>
-<script src="assets/js/sound.js"></script>
+<div id="board" class="glass"></div>
+
+<script type="module" src="assets/js/leaderboard.js"></script>
+<script src="assets/js/sounds.js"></script>
 </body>
 </html>
